@@ -1,0 +1,17 @@
+main {
+  height: calc(100vh - 80px);
+  background: gainsboro;
+}
+
+header {
+  border-right: 1px solid white;
+  height: 50vh;
+}
+
+.navbar {
+  background: blue;
+}
+
+footer {
+  background: white;
+}
