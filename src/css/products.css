@@ -1,0 +1,19 @@
+@import 'common-all.css';
+
+dl {
+  font-size: .745em;
+  line-height: 1.8em;
+  & .row {
+    margin-top: 1em;
+  }
+  & dt {
+    color: #20886c;
+    text-transform: uppercase;
+    padding-top: .125em;
+  }
+  & dd {
+    font-weight: 600;
+    color: #999a9c;
+    padding-top: 0;
+  }
+}

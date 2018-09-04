@@ -5,7 +5,13 @@ const WriteFilePlugin = require('write-file-webpack-plugin')
 
 module.exports = {
   mode: 'development',
-  entry: path.resolve(__dirname, 'src/js/index.js'),
+  entry: {
+    index: path.resolve(__dirname, 'src/js/index.js'),
+    about: path.resolve(__dirname, 'src/js/about.js'),
+    strategies: path.resolve(__dirname, 'src/js/strategies.js'),
+    products: path.resolve(__dirname, 'src/js/products.js'),
+    contact: path.resolve(__dirname, 'src/js/contact.js'),
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/[name].js'
@@ -27,7 +33,7 @@ module.exports = {
         }]
       },
       {
-        test: /.(css|scss)$/,
+        test: /.css$/,
         use: [{
             // Agrega CSS al DOM inyectando la etiqueta <style>
             loader: 'style-loader'
@@ -49,13 +55,8 @@ module.exports = {
               }
             }
           },
-          {
-            // Carga los archivos Sass/SCSS y los compila a CSS
-            loader: 'sass-loader'
-          }
         ]
-      },
-      {
+      }, {
         test: /.(jpg|jpeg|gif|bmp|png|svg)$/,
         use: {
           loader: 'url-loader',
@@ -72,7 +73,34 @@ module.exports = {
       test: /^(?!.*(hot)).*/,
     }),
     new HtmlWebpackPlugin({
-      template: './src/index.html'
+      template: './src/index.html',
+      inject: true,
+      chunks: ['index'],
+      filename: './index.html',
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/about.html',
+      inject: true,
+      chunks: ['about'],
+      filename: './about.html',
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/strategies.html',
+      inject: true,
+      chunks: ['strategies'],
+      filename: './strategies.html',
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/products.html',
+      inject: true,
+      chunks: ['products'],
+      filename: './products.html',
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/contact.html',
+      inject: true,
+      chunks: ['contact'],
+      filename: './contact.html',
     }),
     new MiniCSSExtractPlugin({
       filename: 'css/[name].css',

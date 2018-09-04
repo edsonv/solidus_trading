@@ -1,0 +1,21 @@
+@import 'common-all.css';
+main {
+  & img {
+    width: 15.55vw;
+  }
+}
+
+@media (max-width: 575px) {
+  #main-container {
+    height: 120vh;
+    & img {
+      width: 45%;
+    }
+  }
+  #right {
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}

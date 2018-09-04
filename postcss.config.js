@@ -6,9 +6,11 @@ module.exports= {
   ),
   require('postcss-font-magician')( {
     variants: {
-      'Lato': {
+      'Raleway': {
         '300': [],
-        '400': [],
+        '600': [],
+        '700': [],
+        '700 italic': [],
       }
     }
   }

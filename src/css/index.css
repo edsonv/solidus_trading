@@ -1,0 +1,12 @@
+@import 'common-all.css';
+
+body {
+  background: url("/img/home.jpg") center no-repeat;
+  background-size: cover;
+}
+
+#main-header-container {
+  & img {
+    width: 35vw;
+  }
+}
