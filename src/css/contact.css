@@ -1,3 +1,4 @@
+@import 'common-body.css';
 @import 'common-all.css';
 
 #horizontal-rule {
@@ -36,5 +37,22 @@
   }
   & span {
     padding: 0 .3em;
+  }
+}
+
+@media (max-width: 575px) {
+  #top {
+    & a {
+      margin-left: 0;
+    }
+  }
+  #bottom {
+    & a {
+      display: block;
+      padding: .5em .8em;
+    }
+    & span {
+      display: none;
+    }
   }
 }
