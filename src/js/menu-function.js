@@ -18,10 +18,8 @@ consulta.addListener(mediaQuery);
 
 function mediaQuery() {
   if (consulta.matches) {
-    console.log("se cumplio la condicion");
     $menuButton.addEventListener('touchstart', toggleMenu);
   } else {
-    console.log("no se cumplio la condicion");
     $menuButton.removeEventListener('touchstart', toggleMenu);
   }
 }

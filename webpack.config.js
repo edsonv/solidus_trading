@@ -1,6 +1,8 @@
+const glob = require('glob-all')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin')
 const path = require('path')
+const PurifyCSSPugin = require('purifycss-webpack')
 const WriteFilePlugin = require('write-file-webpack-plugin')
 
 module.exports = {
@@ -25,19 +27,20 @@ module.exports = {
         }]
       },
       {
-        test: /.(css|scss)$/,
+        test: /.(css)$/,
         use: [{
-            loader: 'style-loader',
-
+            // Add CSS to the DOM by injecting a '<style>' tag
+            loader: 'style-loader'
           },
           {
-            loader: MiniCSSExtractPlugin.loader,
+            loader: MiniCSSExtractPlugin.loader
           },
           {
-            loader: 'css-loader',
-
+            // Interprets '@imports' and 'url()' like 'import/require' and will resolve them
+            loader: 'css-loader'
           },
           {
+            // Loader for webpack to process CSS with PostCSS
             loader: 'postcss-loader',
             options: {
               config: {
@@ -45,9 +48,10 @@ module.exports = {
               }
             }
           },
-          // {
-          //   loader: 'sass-loader',
-          // }
+          {
+            // Loads a SASS/SCSS file and compiles it to CSS
+            loader: 'sass-loader'
+          }
         ]
       },
       {
@@ -87,5 +91,14 @@ module.exports = {
       filename: 'css/[name].css',
       chunkFilename: '[id].css'
     }),
+    // new PurifyCSSPugin({
+    //   paths: glob.sync([
+    //     path.join(__dirname, 'src/*.html'),
+    //     path.join(__dirname, 'src/js/*.js')
+    //   ]),
+    //   purifyOptions: {
+    //     whitelist: []
+    //   }
+    // })
   ]
 }

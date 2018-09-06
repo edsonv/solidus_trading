@@ -18,3 +18,53 @@ dl {
     padding-top: 0;
   }
 }
+
+#right {
+  & img {
+    margin-top: -1.5em;
+    width: 75%;
+  }
+}
+
+@media (max-width: 575.98px) {
+  #right {
+    & img {
+      margin-top: -.1em;
+      width: 45%;
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  #right {
+    & img {
+      margin-top: -.5em;
+      width: 50%;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  #right {
+    & img {
+      width: 70%;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  #main-container {
+    & img {
+      margin-top: -.9em;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  #main-container {
+    & img {
+      width: 60%;
+      margin-top: -.9em;
+    }
+  }
+}

@@ -1,16 +1,32 @@
 @import 'common-body.css';
 @import 'common-all.css';
 
-main {
+#main-container {
   & img {
     width: 15.55vw;
   }
 }
 
-@media (max-width: 575px) {
+@media (max-width: 575.98px) {
   #main-container {
     & img {
-      width: 45%;
+      width: 30vw;
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  #main-container {
+    & img {
+      width: 30vw;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  #main-container {
+    & img {
+      width: 25vw;
     }
   }
 }

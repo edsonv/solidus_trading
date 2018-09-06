@@ -1,9 +1,11 @@
-body#common {
-  height: 100vh;
-  width: 100vw;
-  margin: 0;
-  padding: 0;
-  font-family: 'Raleway', system-ui;
-  background-color: #e6e7e8;
-  font-size: 2.48vh;
+.common {
+  & body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', system-ui;
+    background: #e6e7e8;
+    font-size: 2.48vh;
+  }
 }

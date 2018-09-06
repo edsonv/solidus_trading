@@ -1,5 +1,30 @@
 .container-fluid {
-  height: 83.583vh;
+  height: 83.165vh;
+}
+
+#common-header-container {
+  & img {
+    width: 24vw;
+  }
+}
+
+#vertical-rule {
+  background: #FFFFFF;
+  width: 2px;
+  height: 75vh;
+}
+
+.horizontal-rule {
+  height: 2px;
+  background: #FFFFFF;
+}
+
+#right {
+  height: 75vh;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 #navbar-container {
@@ -25,18 +50,6 @@
   }
 }
 
-#common-header-container {
-  & img {
-    width: 24vw;
-  }
-}
-
-#vertical-rule {
-  background: #FFFFFF;
-  width: 2px;
-  height: 75vh;
-}
-
 h1 {
   font-weight: 700;
   color: #294d6a;
@@ -51,39 +64,37 @@ p {
   line-height: 1.8em;
 }
 
-.btn {
+#menu-button.btn {
   background: #879aa8;
   color: #dbe1e5;
   font-weight: 700;
-  font-size: .755em;
+  font-size: .745em;
   border-radius: 0;
-}
-
-#right {
-  height: 70vh;
-  overflow-y: scroll;
-  &::-webkit-scrollbar {
+  text-transform: uppercase;
+  & img {
     display: none;
   }
 }
 
-@media (max-width: 575px) {
+@media (max-width: 575.98px) {
+  #common-header-container {
+    & img {
+      width: 35vw;
+    }
+  }
   #main-container {
     margin-bottom: 10em;
-  }
-  .btn {
-    font-size: 1em;
   }
   #navbar-container {
     &.hide {
       display: none;
     }
     & .nav-item {
-      /* padding: .5em 0em; */
       & .nav-link {
         margin: .9em;
         border-bottom: none;
         padding-bottom: .1em;
+        text-transform: uppercase;
         &.active {
           text-decoration: underline;
         }
@@ -92,6 +103,34 @@ p {
   }
   #divider-container {
     display: none;
+  }
+  #right {
+    height: 65vh;
+  }
+}
+
+@media (min-width: 576px) {
+  #common-header-container {
+    & img {
+      width: 35vw;
+    }
+  }
+  #main-container {
+    margin-bottom: 10em;
+  }
+  #right {
+    height: 65vh;
+  }
+}
+
+@media (min-width: 768px) {
+  #common-header-container {
+    & img {
+      width: 30vw;
+    }
+  }
+  #main-container {
+    margin-bottom: 1em;
   }
   #right {
     height: 80vh;
