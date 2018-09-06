@@ -1,8 +1,8 @@
-const glob = require('glob-all')
+/*const glob = require('glob-all')*/
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin')
 const path = require('path')
-const PurifyCSSPugin = require('purifycss-webpack')
+/*const PurifyCSSPugin = require('purifycss-webpack')*/
 const WriteFilePlugin = require('write-file-webpack-plugin')
 
 module.exports = {
@@ -27,7 +27,7 @@ module.exports = {
         }]
       },
       {
-        test: /.(css)$/,
+        test: /.(css|scss)$/,
         use: [{
             // Add CSS to the DOM by injecting a '<style>' tag
             loader: 'style-loader'
@@ -93,12 +93,13 @@ module.exports = {
     }),
     // new PurifyCSSPugin({
     //   paths: glob.sync([
-    //     path.join(__dirname, 'src/*.html'),
-    //     path.join(__dirname, 'src/js/*.js')
+    //     path.join(__dirname, 'src/index.html'),
+    //     path.join(__dirname, 'src/js/index.js'),
+    //     path.join(__dirname, 'src/scss/*.scss')
     //   ]),
     //   purifyOptions: {
     //     whitelist: []
     //   }
-    // })
+    // }),
   ]
 }

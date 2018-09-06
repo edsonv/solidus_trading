@@ -1,0 +1,138 @@
+.container-fluid {
+  height: 83.165vh;
+}
+
+#common-header-container {
+  & img {
+    width: 24vw;
+  }
+}
+
+#vertical-rule {
+  background: #FFFFFF;
+  width: 2px;
+  height: 75vh;
+}
+
+.horizontal-rule {
+  height: 2px;
+  background: #FFFFFF;
+}
+
+#right {
+  height: 75vh;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+#navbar-container {
+  background: #879aa8;
+  & .nav-link {
+    font-weight: 700;
+    font-size: .755em;
+    color: #dbe1e5;
+    margin: 0 .8em;
+    padding: 0 .3em;
+    &.active {
+      border-bottom: .1em solid #dbe1e5;
+    }
+  }
+}
+
+#footer-container {
+  background: #3d5f77;
+  & small {
+    font-weight: 400;
+    font-size: .655em;
+    color: #9eafba;
+  }
+}
+
+h1 {
+  font-weight: 700;
+  color: #294d6a;
+  text-transform: uppercase;
+  font-size: .875em;
+}
+
+p {
+  font-weight: 600;
+  color: #999a9c;
+  font-size: .745em;
+  line-height: 1.8em;
+}
+
+#menu-button.btn {
+  background: #879aa8;
+  color: #dbe1e5;
+  font-weight: 700;
+  font-size: .745em;
+  border-radius: 0;
+  text-transform: uppercase;
+  & img {
+    display: none;
+  }
+}
+
+@media (max-width: 575.98px) {
+  #common-header-container {
+    & img {
+      width: 35vw;
+    }
+  }
+  #main-container {
+    margin-bottom: 10em;
+  }
+  #navbar-container {
+    &.hide {
+      display: none;
+    }
+    & .nav-item {
+      & .nav-link {
+        margin: .9em;
+        border-bottom: none;
+        padding-bottom: .1em;
+        text-transform: uppercase;
+        &.active {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  #divider-container {
+    display: none;
+  }
+  #right {
+    height: 65vh;
+  }
+}
+
+@media (min-width: 576px) {
+  #common-header-container {
+    & img {
+      width: 35vw;
+    }
+  }
+  #main-container {
+    margin-bottom: 10em;
+  }
+  #right {
+    height: 65vh;
+  }
+}
+
+@media (min-width: 768px) {
+  #common-header-container {
+    & img {
+      width: 30vw;
+    }
+  }
+  #main-container {
+    margin-bottom: 1em;
+  }
+  #right {
+    height: 80vh;
+  }
+}

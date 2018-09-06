@@ -33,7 +33,7 @@ module.exports = {
         }]
       },
       {
-        test: /.css$/,
+        test: /.(css|scss)$/,
         use: [{
             // Agrega CSS al DOM inyectando la etiqueta <style>
             loader: 'style-loader'
@@ -55,6 +55,10 @@ module.exports = {
               }
             }
           },
+          {
+            // Loads a SASS/SCSS file and compiles it to CSS
+            loader: 'sass-loader'
+          }
         ]
       }, {
         test: /.(jpg|jpeg|gif|bmp|png|svg)$/,

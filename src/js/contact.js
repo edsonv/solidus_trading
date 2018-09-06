@@ -1,5 +1,4 @@
 import 'bootstrap'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '../css/contact.css'
+import '../scss/contact.scss'
 import './menu-function.js'
 import '../contact.html'

@@ -1,5 +1,4 @@
 import 'bootstrap'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '../css/strategies.css'
+import '../scss/strategies.scss'
 import './menu-function.js'
 import '../strategies.html'

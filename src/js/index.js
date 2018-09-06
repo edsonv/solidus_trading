@@ -1,5 +1,4 @@
 import 'bootstrap'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '../css/index.css'
+import '../scss/index.scss'
 import './menu-function.js'
 import '../index.html'
