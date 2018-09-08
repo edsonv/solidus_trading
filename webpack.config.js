@@ -1,9 +1,9 @@
-/*const glob = require('glob-all')*/
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin')
 const path = require('path')
-/*const PurifyCSSPugin = require('purifycss-webpack')*/
 const WriteFilePlugin = require('write-file-webpack-plugin')
+const webpack = require('webpack')
 
 module.exports = {
   mode: 'production',
@@ -16,7 +16,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'js/[name].js'
+    filename: 'js/[name].js',
   },
   module: {
     rules: [{
@@ -33,14 +33,17 @@ module.exports = {
             loader: 'style-loader'
           },
           {
-            loader: MiniCSSExtractPlugin.loader
+            loader: MiniCSSExtractPlugin.loader,
+            options: {
+              publicPath: '../'
+            }
           },
           {
             // Interprets '@imports' and 'url()' like 'import/require' and will resolve them
-            loader: 'css-loader'
-          },
-          {
-            // Loader for webpack to process CSS with PostCSS
+            loader: 'css-loader',
+
+          }, {
+            //Loader for webpack to process CSS with PostCSS
             loader: 'postcss-loader',
             options: {
               config: {
@@ -48,14 +51,15 @@ module.exports = {
               }
             }
           },
+
           {
             // Loads a SASS/SCSS file and compiles it to CSS
-            loader: 'sass-loader'
-          }
+            loader: 'sass-loader',
+          },
         ]
       },
       {
-        test: /.(jpg|jpeg|gif|bmp|png|svg)$/,
+        test: /.(jpg|png|svg)$/,
         use: {
           loader: 'url-loader',
           options: {
@@ -63,13 +67,13 @@ module.exports = {
             name: 'img/[name].[ext]'
           }
         }
-      }
+      },
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
       filename: './index.html',
-      template: './src/index.html'
+      template: './src/index.html',
     }),
     new HtmlWebpackPlugin({
       filename: './about.html',
@@ -89,17 +93,24 @@ module.exports = {
     }),
     new MiniCSSExtractPlugin({
       filename: 'css/[name].css',
-      chunkFilename: '[id].css'
+      chunkFilename: '[id].css',
     }),
-    // new PurifyCSSPugin({
-    //   paths: glob.sync([
-    //     path.join(__dirname, 'src/index.html'),
-    //     path.join(__dirname, 'src/js/index.js'),
-    //     path.join(__dirname, 'src/scss/*.scss')
-    //   ]),
-    //   purifyOptions: {
-    //     whitelist: []
-    //   }
-    // }),
+    new FaviconsWebpackPlugin({
+      logo: './src/img/favicon.png',
+      prefix: 'favicons/',
+      inject: true,
+      icons: {
+        android: true,
+        appleIcon: false,
+        appleStartup: false,
+        coast: false,
+        favicons: true,
+        firefox: true,
+        opengraph: false,
+        twitter: false,
+        yandex: false,
+        windows: false
+      }
+    })
   ]
 }

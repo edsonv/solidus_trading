@@ -83,7 +83,7 @@ p {
     }
   }
   #main-container {
-    margin-bottom: 10em;
+    margin-bottom: 5em;
   }
   #navbar-container {
     &.hide {
@@ -116,10 +116,10 @@ p {
     }
   }
   #main-container {
-    margin-bottom: 10em;
+    margin-bottom: 5em;
   }
   #right {
-    height: 65vh;
+    height: 60vh;
   }
 }
 
@@ -130,9 +130,18 @@ p {
     }
   }
   #main-container {
-    margin-bottom: 1em;
+    margin-bottom: 2em;
   }
   #right {
     height: 80vh;
+  }
+}
+
+@media (min-width: 992px) {
+  #main-container {
+    margin-bottom: 12m;
+  }
+  #right {
+    height: 75vh;
   }
 }

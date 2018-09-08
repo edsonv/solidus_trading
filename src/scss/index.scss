@@ -2,16 +2,6 @@
 @import 'main-body.scss';
 @import 'common-all.scss';
 
-body#main {
-  height: 100vh;
-  width: 100vw;
-  margin: 0;
-  padding: 0;
-  background: url("/img/home.jpg") center no-repeat;
-  background-size: cover;
-  font-size: 2.48vh;
-}
-
 #main-header-container {
   & img {
     width: 35vw;
