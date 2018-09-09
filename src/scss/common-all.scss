@@ -77,11 +77,6 @@ p {
 }
 
 @media (max-width: 575.98px) {
-  #common-header-container {
-    & img {
-      width: 35vw;
-    }
-  }
   #main-container {
     margin-bottom: 5em;
   }
@@ -110,11 +105,6 @@ p {
 }
 
 @media (min-width: 576px) {
-  #common-header-container {
-    & img {
-      width: 35vw;
-    }
-  }
   #main-container {
     margin-bottom: 5em;
   }
@@ -124,22 +114,8 @@ p {
 }
 
 @media (min-width: 768px) {
-  #common-header-container {
-    & img {
-      width: 30vw;
-    }
-  }
   #main-container {
-    margin-bottom: 2em;
-  }
-  #right {
-    height: 80vh;
-  }
-}
-
-@media (min-width: 992px) {
-  #main-container {
-    margin-bottom: 12m;
+    margin-bottom: 1em;
   }
   #right {
     height: 75vh;

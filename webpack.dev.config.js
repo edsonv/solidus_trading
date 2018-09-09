@@ -78,32 +78,22 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: './src/index.html',
-      inject: true,
-      chunks: ['index'],
       filename: './index.html',
     }),
     new HtmlWebpackPlugin({
       template: './src/about.html',
-      inject: true,
-      chunks: ['about'],
       filename: './about.html',
     }),
     new HtmlWebpackPlugin({
       template: './src/strategies.html',
-      inject: true,
-      chunks: ['strategies'],
       filename: './strategies.html',
     }),
     new HtmlWebpackPlugin({
       template: './src/products.html',
-      inject: true,
-      chunks: ['products'],
       filename: './products.html',
     }),
     new HtmlWebpackPlugin({
       template: './src/contact.html',
-      inject: true,
-      chunks: ['contact'],
       filename: './contact.html',
     }),
     new MiniCSSExtractPlugin({

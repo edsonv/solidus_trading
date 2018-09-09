@@ -1,7 +1,8 @@
 module.exports= {
   plugins: [ require('autoprefixer'),
   require('postcss-import')( {
-    plugins: [ require('stylelint')]
+    plugins: [ require('stylelint'),
+    ]
   }
   ),
   require('postcss-font-magician')( {
