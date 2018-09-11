@@ -1,4 +1,4 @@
-import 'bootstrap'
+// import 'bootstrap'
 import '../scss/products.scss'
-import './menu-function.js'
+// import './menu-function.js'
 import '../products.html'
