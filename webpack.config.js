@@ -1,7 +1,9 @@
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
+const glob = require('glob');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin')
 const path = require('path')
+const PurgecssPlugin = require('purgecss-webpack-plugin')
 const WriteFilePlugin = require('write-file-webpack-plugin')
 const webpack = require('webpack')
 
@@ -94,6 +96,9 @@ module.exports = {
     new MiniCSSExtractPlugin({
       filename: 'css/[name].css',
       chunkFilename: '[id].css',
+    }),
+    new PurgecssPlugin({
+      paths: glob.sync(`${path.join(__dirname, 'src')}/*`, { nodir: true })
     }),
     new FaviconsWebpackPlugin({
       logo: './src/img/favicon.png',
